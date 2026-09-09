@@ -1,1 +1,1138 @@
 
+/* =========================================================
+   TORRA CAFÉ — HERO SECTION
+========================================================= */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 700px;
+    overflow: hidden;
+    background: #110d0a;
+    color: #eee9df;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero-visual {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 76% 45%,
+            rgba(145, 101, 68, 0.32),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(83, 51, 32, 0.30),
+            transparent 28%
+        ),
+        linear-gradient(
+            115deg,
+            #342219 0%,
+            #1b130e 38%,
+            #100c09 72%,
+            #080706 100%
+        );
+
+    transform: scale(1.04);
+
+    animation: heroBackgroundIn 2s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes heroBackgroundIn {
+    from {
+        transform: scale(1.12);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero-glow {
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: 5%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(172,119,78,.14),
+            transparent 65%
+        );
+
+    filter: blur(20px);
+
+    animation: heroGlow 7s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: .6;
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.12);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,5,4,.90) 0%,
+            rgba(7,5,4,.72) 35%,
+            rgba(7,5,4,.35) 62%,
+            rgba(7,5,4,.48) 100%
+        );
+}
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.hero-grain {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .055;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   TOP META
+========================================================= */
+
+.hero-meta {
+    position: absolute;
+
+    top: 118px;
+    left: 5vw;
+    right: 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 5;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+    line-height: 1;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color: rgba(238,233,223,.55);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: absolute;
+
+    left: 5vw;
+    bottom: 17vh;
+
+    max-width: 850px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.hero-eyebrow {
+    margin: 0 0 22px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color: #b99a7c;
+
+    opacity: 0;
+
+    animation:
+        heroFadeUp
+        .9s
+        .25s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero-title {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(76px, 10vw, 155px);
+
+    font-weight: 500;
+
+    line-height: .82;
+
+    letter-spacing: -.065em;
+}
+
+
+/* FIRST LINE */
+
+.hero-title span {
+    display: block;
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    animation:
+        heroTitleIn
+        1s
+        .35s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+/* SECOND LINE */
+
+.hero-title em {
+    display: block;
+
+    margin-left: 9vw;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    color: #b99a7c;
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    animation:
+        heroTitleIn
+        1s
+        .48s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes heroTitleIn {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION + CTA
+========================================================= */
+
+.hero-bottom {
+    margin-top: 45px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 75px;
+
+    opacity: 0;
+
+    animation:
+        heroFadeUp
+        .9s
+        .7s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    max-width: 310px;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+    color: rgba(238,233,223,.65);
+}
+
+
+/* =========================================================
+   EXPLORE LINK
+========================================================= */
+
+.hero-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid
+        rgba(238,233,223,.4);
+
+    color: #eee9df;
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    transition:
+        gap .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+}
+
+.hero-link:hover {
+    gap: 28px;
+
+    color: #b99a7c;
+
+    border-color: #b99a7c;
+}
+
+.hero-link-arrow {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   COFFEE CUP CONTAINER
+========================================================= */
+
+.hero-coffee {
+    position: absolute;
+
+    right: 7vw;
+    top: 51%;
+
+    width: 370px;
+    height: 430px;
+
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   COFFEE CUP
+========================================================= */
+
+.coffee-cup {
+    position: absolute;
+
+    left: 35px;
+    top: 80px;
+
+    width: 270px;
+    height: 270px;
+
+    animation:
+        cupFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CUP BODY
+========================================================= */
+
+.cup-body {
+    position: absolute;
+
+    left: 35px;
+    top: 30px;
+
+    width: 200px;
+    height: 175px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(238,233,223,.62);
+
+    border-radius:
+        8px 8px 45% 45%;
+
+    background:
+        rgba(238,233,223,.025);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   COFFEE LIQUID
+========================================================= */
+
+.coffee-liquid {
+    position: absolute;
+
+    left: -5%;
+    bottom: 0;
+
+    width: 110%;
+    height: 0%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a87951 0%,
+            #70472f 30%,
+            #3a2316 100%
+        );
+
+    border-radius:
+        45% 45% 0 0;
+
+    animation:
+        coffeeFill
+        3.2s
+        1.1s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes coffeeFill {
+
+    0% {
+        height: 0%;
+    }
+
+    65% {
+        height: 78%;
+    }
+
+    100% {
+        height: 72%;
+    }
+
+}
+
+
+/* =========================================================
+   COFFEE SURFACE WAVE
+========================================================= */
+
+.coffee-wave {
+    position: absolute;
+
+    top: -7px;
+    left: -10%;
+
+    width: 120%;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #ae7b52;
+
+    animation:
+        coffeeWave
+        2.3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes coffeeWave {
+
+    0%,
+    100% {
+        transform:
+            translateX(-3%)
+            scaleY(.85);
+    }
+
+    50% {
+        transform:
+            translateX(3%)
+            scaleY(1.1);
+    }
+
+}
+
+
+/* =========================================================
+   CUP HIGHLIGHT
+========================================================= */
+
+.cup-highlight {
+    position: absolute;
+
+    left: 20px;
+    top: 15px;
+
+    width: 2px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(238,233,223,.25);
+
+    filter: blur(.5px);
+}
+
+
+/* =========================================================
+   CUP HANDLE
+========================================================= */
+
+.cup-handle {
+    position: absolute;
+
+    right: 5px;
+    top: 60px;
+
+    width: 70px;
+    height: 100px;
+
+    border:
+        1px solid
+        rgba(238,233,223,.62);
+
+    border-left: 0;
+
+    border-radius:
+        0 50% 50% 0;
+}
+
+
+/* INNER HANDLE */
+
+.cup-handle::after {
+    content: "";
+
+    position: absolute;
+
+    right: 12px;
+    top: 18px;
+
+    width: 40px;
+    height: 64px;
+
+    border:
+        1px solid
+        rgba(238,233,223,.25);
+
+    border-left: 0;
+
+    border-radius:
+        0 50% 50% 0;
+}
+
+
+/* =========================================================
+   SAUCER
+========================================================= */
+
+.cup-saucer {
+    position: absolute;
+
+    left: 10px;
+    bottom: 10px;
+
+    width: 250px;
+    height: 25px;
+
+    border:
+        1px solid
+        rgba(238,233,223,.55);
+
+    border-radius: 50%;
+
+    background:
+        rgba(238,233,223,.025);
+}
+
+
+/* =========================================================
+   STEAM
+========================================================= */
+
+.coffee-steam {
+    position: absolute;
+
+    left: 105px;
+    top: 5px;
+
+    width: 120px;
+    height: 100px;
+}
+
+
+.coffee-steam span {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 1px;
+
+    height: 65px;
+
+    background:
+        rgba(238,233,223,.30);
+
+    border-radius: 50%;
+
+    filter: blur(.5px);
+
+    opacity: 0;
+
+    animation:
+        steamRise
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* STEAM 1 */
+
+.coffee-steam span:nth-child(1) {
+    left: 20px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* STEAM 2 */
+
+.coffee-steam span:nth-child(2) {
+    left: 55px;
+
+    height: 80px;
+
+    animation-delay: 2.2s;
+}
+
+
+/* STEAM 3 */
+
+.coffee-steam span:nth-child(3) {
+    left: 90px;
+
+    height: 55px;
+
+    animation-delay: 2.8s;
+}
+
+
+@keyframes steamRise {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scaleY(.7);
+    }
+
+    30% {
+        opacity: .45;
+    }
+
+    70% {
+        opacity: .18;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-35px)
+            scaleY(1.2);
+    }
+
+}
+
+
+/* =========================================================
+   COFFEE LABEL
+========================================================= */
+
+.coffee-label {
+    position: absolute;
+
+    right: 0;
+    bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(238,233,223,.45);
+}
+
+
+/* =========================================================
+   CUP FLOATING ANIMATION
+========================================================= */
+
+@keyframes cupFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   HERO FOOTER
+========================================================= */
+
+.hero-footer {
+    position: absolute;
+
+    left: 5vw;
+    right: 5vw;
+    bottom: 28px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    align-items: end;
+
+    z-index: 5;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(238,233,223,.55);
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.hero-rating {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.rating-star {
+    color: #b99a7c;
+
+    font-size: 10px;
+}
+
+
+.rating-muted {
+    opacity: .45;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.scroll-line {
+    width: 1px;
+    height: 32px;
+
+    background:
+        rgba(238,233,223,.45);
+
+    animation:
+        scrollPulse
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: .3;
+
+        transform: scaleY(.7);
+
+        transform-origin: top;
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scaleY(1);
+    }
+
+}
+
+
+/* =========================================================
+   OPEN STATUS
+========================================================= */
+
+.hero-status {
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #8b9a73;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139,154,115,.10);
+}
+
+
+/* =========================================================
+   GENERAL HERO FADE
+========================================================= */
+
+@keyframes heroFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero-coffee {
+        right: 0;
+
+        transform:
+            translateY(-50%)
+            scale(.82);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .hero-section {
+        min-height: 100svh;
+    }
+
+
+    .hero-meta {
+        top: 98px;
+
+        left: 6vw;
+        right: 6vw;
+    }
+
+
+    .hero-content {
+        left: 6vw;
+
+        bottom: 17vh;
+
+        max-width: 88vw;
+    }
+
+
+    .hero-title {
+        font-size:
+            clamp(
+                62px,
+                17vw,
+                100px
+            );
+    }
+
+
+    .hero-title em {
+        margin-left: 11vw;
+    }
+
+
+    .hero-bottom {
+        margin-top: 32px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 28px;
+    }
+
+
+    .hero-description {
+        max-width: 270px;
+
+        font-size: 11px;
+    }
+
+
+    /* COFFEE */
+
+    .hero-coffee {
+        right: -105px;
+
+        top: 36%;
+
+        transform:
+            translateY(-50%)
+            scale(.52);
+
+        opacity: .42;
+    }
+
+
+    /* FOOTER */
+
+    .hero-footer {
+        left: 6vw;
+        right: 6vw;
+
+        bottom: 22px;
+
+        grid-template-columns:
+            1fr
+            auto;
+    }
+
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    .hero-status {
+        justify-self: end;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-meta {
+        font-size: 7px;
+    }
+
+
+    .hero-content {
+        bottom: 15vh;
+    }
+
+
+    .hero-eyebrow {
+        font-size: 7px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero-title {
+        font-size: 62px;
+    }
+
+
+    .hero-title em {
+        margin-left: 8vw;
+    }
+
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+
+    .hero-footer {
+        font-size: 7px;
+    }
+
+
+    .rating-muted {
+        display: none;
+    }
+
+
+    .hero-coffee {
+        right: -120px;
+
+        top: 33%;
+
+        transform:
+            translateY(-50%)
+            scale(.46);
+
+        opacity: .35;
+    }
+
+}
