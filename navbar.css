@@ -1,28 +1,56 @@
 /* =========================================================
    TORRA CAFÉ — NAVBAR
+   Designed by Jayara Web Works
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL BOX SIZING
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAVBAR
 ========================================================= */
 
 .torra-navbar {
+
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
+    max-width: 100vw;
+
     height: 88px;
 
     padding: 0 32px 0 5vw;
 
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        auto
+        minmax(180px, 1fr);
+
     align-items: center;
 
     z-index: 1000;
 
-    background: rgba(238, 233, 223, 0.92);
+    background: rgba(238, 233, 223, 0.96);
 
-    border-bottom: 1px solid rgba(20, 18, 16, 0.08);
+    border-bottom:
+        1px solid rgba(20, 18, 16, 0.10);
 
     backdrop-filter: blur(14px);
+
     -webkit-backdrop-filter: blur(14px);
 
     color: #141210;
@@ -30,22 +58,31 @@
     overflow: hidden;
 }
 
-/* ===============================
+
+/* =========================================================
    BRAND
-================================ */
+========================================================= */
 
 .torra-brand {
-    display: flex;
-    flex-direction: column;
 
-    text-decoration: none;
+    justify-self: start;
+
+    display: flex;
+
+    flex-direction: column;
 
     color: #141210;
 
+    text-decoration: none;
+
     line-height: 1;
+
+    cursor: pointer;
 }
 
+
 .torra-brand-main {
+
     font-family: "Manrope", sans-serif;
 
     font-size: 28px;
@@ -53,13 +90,22 @@
     font-weight: 800;
 
     letter-spacing: -0.08em;
+
+    transition:
+        transform 0.35s ease;
 }
+
 
 .brand-symbol {
+
     color: #76563f;
+
+    margin-left: 2px;
 }
 
+
 .torra-brand-sub {
+
     margin-top: 7px;
 
     font-family: "DM Mono", monospace;
@@ -71,17 +117,29 @@
     color: #76563f;
 
     opacity: 0.8;
+
+    text-transform: uppercase;
 }
 
 
-/* ===============================
-   DESKTOP NAV
-================================ */
+.torra-brand:hover .torra-brand-main {
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .torra-nav-links {
+
+    justify-self: center;
+
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 30px;
@@ -89,7 +147,9 @@
     white-space: nowrap;
 }
 
+
 .torra-nav-links a {
+
     position: relative;
 
     color: #141210;
@@ -106,25 +166,35 @@
 
     opacity: 0.6;
 
-    transition: opacity 0.3s ease;
+    white-space: nowrap;
+
+    transition:
+        opacity 0.3s ease;
 }
 
+
 .torra-nav-links a:hover {
+
     opacity: 1;
 }
 
 
-/* animated underline */
+/* =========================================================
+   NAVIGATION HOVER LINE
+========================================================= */
 
 .torra-nav-links a::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     bottom: -8px;
 
     width: 100%;
+
     height: 1px;
 
     background: #76563f;
@@ -134,34 +204,47 @@
     transform-origin: right;
 
     transition:
-        transform 0.35s ease;
+        transform 0.35s
+        cubic-bezier(.77, 0, .18, 1);
 }
 
+
 .torra-nav-links a:hover::after {
+
     transform: scaleX(1);
 
     transform-origin: left;
 }
 
 
-/* ===============================
+/* =========================================================
    RESERVE BUTTON
-================================ */
+========================================================= */
 
 .torra-reserve {
+
     justify-self: end;
 
-    display: flex;
+    display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
 
+    width: max-content;
+
+    max-width: 100%;
+
     padding: 13px 18px;
 
-    border: 1px solid rgba(20, 18, 16, 0.3);
+    border:
+        1px solid rgba(20, 18, 16, 0.30);
 
     color: #141210;
+
+    background: transparent;
 
     text-decoration: none;
 
@@ -169,37 +252,58 @@
 
     font-size: 9px;
 
-    letter-spacing: 0.1em;
+    letter-spacing: 0.10em;
 
     text-transform: uppercase;
 
     white-space: nowrap;
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease;
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
 }
+
+
 .torra-reserve:hover {
+
     background: #141210;
 
     color: #eee9df;
+
+    border-color: #141210;
 }
+
 
 .torra-reserve-arrow {
+
     font-size: 13px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.35s ease;
 }
 
 
-/* ===============================
-   MOBILE BUTTON
-================================ */
+.torra-reserve:hover .torra-reserve-arrow {
+
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
 
 .torra-menu-toggle {
+
+    display: none;
+
     width: 44px;
 
     height: 44px;
-
-    display: none;
 
     align-items: center;
 
@@ -211,36 +315,79 @@
 
     background: transparent;
 
-    border: 1px solid rgba(20,18,16,0.3);
+    border:
+        1px solid rgba(20, 18, 16, 0.30);
 
     cursor: pointer;
+
+    padding: 0;
+
+    position: relative;
+
+    z-index: 1002;
 }
 
+
 .torra-menu-toggle span {
+
+    display: block;
+
     width: 18px;
 
     height: 1px;
 
     background: #141210;
 
-    transition: 0.35s ease;
+    transition:
+        transform 0.35s ease,
+        width 0.35s ease;
 }
 
+
 .torra-menu-toggle span:nth-child(2) {
+
     width: 12px;
 
     margin-left: 6px;
 }
 
 
-/* ===============================
-   MOBILE MENU
-================================ */
+/* =========================================================
+   MOBILE MENU BUTTON — ACTIVE
+========================================================= */
+
+.torra-menu-toggle.active span:first-child {
+
+    transform:
+        translateY(3.5px)
+        rotate(45deg);
+}
+
+
+.torra-menu-toggle.active span:nth-child(2) {
+
+    width: 18px;
+
+    margin-left: 0;
+
+    transform:
+        translateY(-3.5px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE FULLSCREEN MENU
+========================================================= */
 
 .torra-mobile-menu {
+
     position: fixed;
 
     inset: 0;
+
+    width: 100%;
+    height: 100vh;
 
     z-index: 999;
 
@@ -252,7 +399,8 @@
 
     visibility: hidden;
 
-    transform: translateY(-20px);
+    transform:
+        translateY(-20px);
 
     transition:
         opacity 0.4s ease,
@@ -260,18 +408,31 @@
         visibility 0.4s ease;
 }
 
+
 .torra-mobile-menu.active {
+
     opacity: 1;
 
     visibility: visible;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
+
+/* =========================================================
+   MOBILE MENU INNER
+========================================================= */
+
 .mobile-menu-inner {
+
+    width: 100%;
     height: 100%;
 
-    padding: 120px 8vw 40px;
+    padding:
+        110px
+        8vw
+        35px;
 
     display: flex;
 
@@ -280,8 +441,16 @@
     justify-content: space-between;
 }
 
+
+/* =========================================================
+   MOBILE MENU TOP
+========================================================= */
+
 .mobile-menu-top {
+
     display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
@@ -291,10 +460,18 @@
 
     letter-spacing: 0.18em;
 
+    text-transform: uppercase;
+
     opacity: 0.45;
 }
 
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
 .torra-mobile-links {
+
     display: flex;
 
     flex-direction: column;
@@ -302,7 +479,9 @@
     gap: 17px;
 }
 
+
 .torra-mobile-links a {
+
     display: flex;
 
     align-items: baseline;
@@ -315,7 +494,8 @@
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(42px, 12vw, 72px);
+    font-size:
+        clamp(42px, 12vw, 72px);
 
     line-height: 0.9;
 
@@ -326,7 +506,9 @@
         transform 0.3s ease;
 }
 
+
 .torra-mobile-links a span {
+
     font-family: "DM Mono", monospace;
 
     font-size: 8px;
@@ -334,22 +516,36 @@
     color: #a98a70;
 
     letter-spacing: 0.1em;
+
+    min-width: 18px;
 }
+
 
 .torra-mobile-links a:hover {
+
     color: #a98a70;
 
-    transform: translateX(8px);
+    transform:
+        translateX(8px);
 }
 
+
+/* =========================================================
+   MOBILE MENU BOTTOM
+========================================================= */
+
 .mobile-menu-bottom {
+
     display: flex;
+
+    align-items: flex-end;
 
     justify-content: space-between;
 
-    align-items: end;
+    gap: 20px;
 
-    border-top: 1px solid rgba(238,233,223,0.15);
+    border-top:
+        1px solid rgba(238, 233, 223, 0.15);
 
     padding-top: 20px;
 
@@ -358,9 +554,13 @@
     font-size: 8px;
 
     letter-spacing: 0.12em;
+
+    text-transform: uppercase;
 }
 
+
 .mobile-menu-bottom div {
+
     display: flex;
 
     flex-direction: column;
@@ -370,48 +570,111 @@
     opacity: 0.45;
 }
 
+
 .mobile-menu-bottom a {
+
     color: #eee9df;
 
-    border-bottom: 1px solid rgba(238,233,223,0.4);
+    text-decoration: none;
+
+    border-bottom:
+        1px solid rgba(238, 233, 223, 0.4);
 
     padding-bottom: 5px;
 }
 
 
-/* ===============================
+/* =========================================================
    MOBILE
-================================ */
+========================================================= */
 
 @media (max-width: 850px) {
 
-   @media (max-width: 850px) {
-
     .torra-navbar {
+
         height: 76px;
-        padding: 0 6vw;
+
+        padding:
+            0 6vw;
+
         display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
     }
+
 
     .torra-nav-links {
+
         display: none;
     }
+
 
     .torra-reserve {
+
         display: none;
     }
 
+
     .torra-menu-toggle {
+
         display: flex;
+    }
+
+
+    .torra-brand-main {
+
+        font-size: 24px;
+    }
+
+
+    .torra-brand-sub {
+
+        font-size: 6px;
+
+        margin-top: 6px;
     }
 
 }
 
-    .torra-brand-main {
-        font-size: 24px;
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .torra-navbar {
+
+        padding:
+            0 5vw;
     }
 
-    .torra-brand-sub {
-        font-size: 6px;
+
+    .torra-brand-main {
+
+        font-size: 22px;
     }
+
+
+    .torra-mobile-links {
+
+        gap: 14px;
+    }
+
+
+    .torra-mobile-links a {
+
+        font-size: 40px;
+    }
+
+
+    .mobile-menu-inner {
+
+        padding-left: 7vw;
+
+        padding-right: 7vw;
+    }
+
 }
