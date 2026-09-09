@@ -219,6 +219,9 @@
 /* =========================================================
    MAIN TITLE
 ========================================================= */
+/* =========================================================
+   HERO TITLE — FIXED
+========================================================= */
 
 .hero-title {
     margin: 0;
@@ -231,37 +234,33 @@
         Georgia,
         serif;
 
-    /* REDUCED SIZE */
-    font-size:
-        clamp(58px, 7.5vw, 115px);
+    /* Smaller than before */
+    font-size: clamp(58px, 7.5vw, 115px);
 
     font-weight: 500;
 
     line-height: .86;
 
     letter-spacing: -.055em;
+
+    opacity: 1 !important;
 }
 
 
-/* FIRST LINE */
+/* MADE FOR */
 
 .hero-title span {
     display: block;
 
-    opacity: 0;
+    opacity: 1 !important;
 
-    transform: translateY(40px);
+    transform: none !important;
 
-    animation:
-        heroTitleIn
-        1s
-        .35s
-        cubic-bezier(.16,1,.3,1)
-        forwards;
+    animation: none !important;
 }
 
 
-/* SECOND LINE */
+/* MOMENTS */
 
 .hero-title em {
     display: block;
@@ -274,16 +273,11 @@
 
     color: #b99a7c;
 
-    opacity: 0;
+    opacity: 1 !important;
 
-    transform: translateY(40px);
+    transform: none !important;
 
-    animation:
-        heroTitleIn
-        1s
-        .48s
-        cubic-bezier(.16,1,.3,1)
-        forwards;
+    animation: none !important;
 }
 
 
