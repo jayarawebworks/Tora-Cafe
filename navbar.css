@@ -1,22 +1,6 @@
 /* =========================================================
    TORRA CAFÉ — NAVBAR
-   Designed by Jayara Web Works
 ========================================================= */
-
-:root {
-    --torra-cream: #eee9df;
-    --torra-black: #12110f;
-    --torra-brown: #76563f;
-    --torra-line: rgba(238, 233, 223, 0.20);
-    --torra-serif: "Playfair Display", Georgia, serif;
-    --torra-sans: "Manrope", Arial, sans-serif;
-    --torra-mono: "DM Mono", monospace;
-}
-
-
-/* ===============================
-   NAVBAR
-================================ */
 
 .torra-navbar {
     position: fixed;
@@ -24,7 +8,7 @@
     left: 0;
 
     width: 100%;
-    height: 92px;
+    height: 88px;
 
     padding: 0 5vw;
 
@@ -34,29 +18,14 @@
 
     z-index: 1000;
 
-    color: var(--torra-cream);
+    background: rgba(238, 233, 223, 0.92);
 
-    transition:
-        height 0.45s ease,
-        background 0.45s ease,
-        backdrop-filter 0.45s ease,
-        border-color 0.45s ease;
-}
+    border-bottom: 1px solid rgba(20, 18, 16, 0.08);
 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
-/* Scrolled state */
-
-.torra-navbar.scrolled {
-
-    height: 72px;
-
-    background: rgba(18, 17, 15, 0.78);
-
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid var(--torra-line);
+    color: #141210;
 }
 
 
@@ -65,63 +34,42 @@
 ================================ */
 
 .torra-brand {
-
     display: flex;
     flex-direction: column;
 
     text-decoration: none;
 
-    color: var(--torra-cream);
+    color: #141210;
 
     line-height: 1;
-
-    position: relative;
-
-    z-index: 10;
 }
 
-
 .torra-brand-main {
-
-    font-family: var(--torra-sans);
+    font-family: "Manrope", sans-serif;
 
     font-size: 28px;
 
     font-weight: 800;
 
-    letter-spacing: -0.085em;
-
-    transition: transform 0.4s ease;
+    letter-spacing: -0.08em;
 }
 
-
-.torra-brand-main span {
-
-    color: #a98a70;
-
-    margin-left: 2px;
+.brand-symbol {
+    color: #76563f;
 }
-
 
 .torra-brand-sub {
-
     margin-top: 7px;
 
-    font-family: var(--torra-mono);
+    font-family: "DM Mono", monospace;
 
     font-size: 7px;
 
     letter-spacing: 0.25em;
 
-    opacity: 0.48;
+    color: #76563f;
 
-    text-transform: uppercase;
-}
-
-
-.torra-brand:hover .torra-brand-main {
-
-    transform: translateY(-2px);
+    opacity: 0.8;
 }
 
 
@@ -130,82 +78,62 @@
 ================================ */
 
 .torra-nav-links {
-
     display: flex;
 
     align-items: center;
 
-    gap: 38px;
-
-    position: absolute;
-
-    left: 50%;
-
-    transform: translateX(-50%);
+    gap: 34px;
 }
 
-
 .torra-nav-links a {
-
     position: relative;
 
-    color: var(--torra-cream);
+    color: #141210;
 
     text-decoration: none;
 
-    font-family: var(--torra-mono);
+    font-family: "DM Mono", monospace;
 
     font-size: 9px;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
 
     text-transform: uppercase;
 
-    opacity: 0.58;
+    opacity: 0.6;
 
-    transition:
-        opacity 0.3s ease,
-        color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
-
-
-/* Hover */
 
 .torra-nav-links a:hover {
-
     opacity: 1;
-
 }
 
 
-/* Animated line */
+/* animated underline */
 
 .torra-nav-links a::after {
-
     content: "";
 
     position: absolute;
 
     left: 0;
-
     bottom: -8px;
 
     width: 100%;
-
     height: 1px;
 
-    background: #a98a70;
+    background: #76563f;
 
     transform: scaleX(0);
 
     transform-origin: right;
 
-    transition: transform 0.4s cubic-bezier(.77,0,.18,1);
+    transition:
+        transform 0.35s ease;
 }
 
-
 .torra-nav-links a:hover::after {
-
     transform: scaleX(1);
 
     transform-origin: left;
@@ -217,22 +145,21 @@
 ================================ */
 
 .torra-reserve {
-
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 14px;
 
     padding: 13px 17px;
 
-    border: 1px solid rgba(238,233,223,0.38);
+    border: 1px solid rgba(20, 18, 16, 0.3);
 
-    color: var(--torra-cream);
+    color: #141210;
 
     text-decoration: none;
 
-    font-family: var(--torra-mono);
+    font-family: "DM Mono", monospace;
 
     font-size: 9px;
 
@@ -240,75 +167,30 @@
 
     text-transform: uppercase;
 
-    position: relative;
-
-    overflow: hidden;
-
     transition:
-        color 0.35s ease,
-        border-color 0.35s ease;
+        background 0.3s ease,
+        color 0.3s ease;
 }
-
-
-.torra-reserve::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background: var(--torra-cream);
-
-    transform: translateY(100%);
-
-    transition: transform 0.4s cubic-bezier(.77,0,.18,1);
-
-    z-index: -1;
-}
-
 
 .torra-reserve:hover {
+    background: #141210;
 
-    color: var(--torra-black);
-
-    border-color: var(--torra-cream);
+    color: #eee9df;
 }
-
-
-.torra-reserve:hover::before {
-
-    transform: translateY(0);
-}
-
 
 .torra-reserve-arrow {
-
     font-size: 13px;
-
-    transition: transform 0.35s ease;
-}
-
-
-.torra-reserve:hover .torra-reserve-arrow {
-
-    transform: translate(3px,-3px);
 }
 
 
 /* ===============================
-   MOBILE MENU BUTTON
+   MOBILE BUTTON
 ================================ */
 
 .torra-menu-toggle {
+    width: 44px;
 
-    width: 46px;
-
-    height: 46px;
-
-    border: 1px solid rgba(238,233,223,0.32);
-
-    background: transparent;
+    height: 44px;
 
     display: none;
 
@@ -320,177 +202,173 @@
 
     gap: 6px;
 
-    cursor: pointer;
+    background: transparent;
 
-    z-index: 1001;
+    border: 1px solid rgba(20,18,16,0.3);
+
+    cursor: pointer;
 }
 
-
 .torra-menu-toggle span {
-
-    display: block;
-
     width: 18px;
 
     height: 1px;
 
-    background: var(--torra-cream);
+    background: #141210;
 
-    transition:
-        transform 0.4s ease,
-        width 0.4s ease;
+    transition: 0.35s ease;
 }
 
-
 .torra-menu-toggle span:nth-child(2) {
-
     width: 12px;
 
     margin-left: 6px;
 }
 
 
-/* Open state */
-
-.torra-menu-toggle.active span:first-child {
-
-    transform: translateY(3.5px) rotate(45deg);
-
-}
-
-
-.torra-menu-toggle.active span:nth-child(2) {
-
-    transform: translateY(-3.5px) rotate(-45deg);
-
-    width: 18px;
-
-    margin-left: 0;
-}
-
-
 /* ===============================
-   MOBILE FULLSCREEN MENU
+   MOBILE MENU
 ================================ */
 
 .torra-mobile-menu {
-
     position: fixed;
 
     inset: 0;
 
-    background: var(--torra-black);
-
-    color: var(--torra-cream);
-
     z-index: 999;
 
-    display: flex;
+    background: #141210;
 
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding: 90px 8vw;
-
-    visibility: hidden;
+    color: #eee9df;
 
     opacity: 0;
+
+    visibility: hidden;
 
     transform: translateY(-20px);
 
     transition:
-        opacity 0.45s ease,
-        transform 0.45s ease,
-        visibility 0.45s ease;
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
 }
 
-
 .torra-mobile-menu.active {
+    opacity: 1;
 
     visibility: visible;
-
-    opacity: 1;
 
     transform: translateY(0);
 }
 
+.mobile-menu-inner {
+    height: 100%;
 
-.torra-mobile-menu-label {
-
-    font-family: var(--torra-mono);
-
-    font-size: 9px;
-
-    letter-spacing: 0.2em;
-
-    opacity: 0.4;
-
-    margin-bottom: 35px;
-}
-
-
-.torra-mobile-links {
+    padding: 120px 8vw 40px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 18px;
+    justify-content: space-between;
 }
 
+.mobile-menu-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.45;
+}
+
+.torra-mobile-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
 
 .torra-mobile-links a {
+    display: flex;
 
-    font-family: var(--torra-serif);
+    align-items: baseline;
 
-    font-size: clamp(42px, 12vw, 75px);
+    gap: 16px;
+
+    color: #eee9df;
+
+    text-decoration: none;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 12vw, 72px);
 
     line-height: 0.9;
 
     letter-spacing: -0.05em;
-
-    color: var(--torra-cream);
-
-    text-decoration: none;
 
     transition:
         color 0.3s ease,
         transform 0.3s ease;
 }
 
+.torra-mobile-links a span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    color: #a98a70;
+
+    letter-spacing: 0.1em;
+}
 
 .torra-mobile-links a:hover {
-
     color: #a98a70;
 
     transform: translateX(8px);
 }
 
-
-.torra-mobile-footer {
-
-    position: absolute;
-
-    bottom: 35px;
-
-    left: 8vw;
-
-    right: 8vw;
-
+.mobile-menu-bottom {
     display: flex;
 
     justify-content: space-between;
 
-    font-family: var(--torra-mono);
+    align-items: end;
+
+    border-top: 1px solid rgba(238,233,223,0.15);
+
+    padding-top: 20px;
+
+    font-family: "DM Mono", monospace;
 
     font-size: 8px;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
+}
 
-    opacity: 0.4;
+.mobile-menu-bottom div {
+    display: flex;
 
-    text-transform: uppercase;
+    flex-direction: column;
+
+    gap: 5px;
+
+    opacity: 0.45;
+}
+
+.mobile-menu-bottom a {
+    color: #eee9df;
+
+    border-bottom: 1px solid rgba(238,233,223,0.4);
+
+    padding-bottom: 5px;
 }
 
 
@@ -501,68 +379,28 @@
 @media (max-width: 850px) {
 
     .torra-navbar {
-
         height: 76px;
 
         padding: 0 6vw;
     }
 
-
-    .torra-navbar.scrolled {
-
-        height: 68px;
-    }
-
-
-    .torra-brand-main {
-
-        font-size: 24px;
-    }
-
-
-    .torra-brand-sub {
-
-        font-size: 6px;
-
-        margin-top: 6px;
-    }
-
-
     .torra-nav-links {
-
         display: none;
     }
-
 
     .torra-reserve {
-
         display: none;
     }
 
-
     .torra-menu-toggle {
-
         display: flex;
     }
 
-}
-
-
-/* ===============================
-   VERY SMALL DEVICES
-================================ */
-
-@media (max-width: 380px) {
-
     .torra-brand-main {
-
-        font-size: 22px;
+        font-size: 24px;
     }
 
-
-    .torra-mobile-links a {
-
-        font-size: 42px;
+    .torra-brand-sub {
+        font-size: 6px;
     }
-
 }
