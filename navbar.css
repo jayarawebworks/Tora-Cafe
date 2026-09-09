@@ -874,7 +874,7 @@
 
     z-index: 100000 !important;
 
-    display: flex !important;
+   display: none !important;
 
     width: 44px !important;
     height: 44px !important;
@@ -955,6 +955,14 @@
 
     .torra-mobile-menu {
         display: none !important;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .torra-menu-toggle {
+        display: flex !important;
     }
 
 }
