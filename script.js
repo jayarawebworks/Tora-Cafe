@@ -1,103 +1,155 @@
 /* =========================================================
-   TORRA CAFÉ — MAIN JAVASCRIPT
-   Designed by Jayara Web Works
+   TORRA CAFÉ
+   MAIN JAVASCRIPT
+   Jayara Web Works
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       MOBILE NAVIGATION
+       MOBILE MENU
     ===================================================== */
 
-    const menuToggle =
-        document.querySelector(".torra-menu-toggle");
+    const menuButton = document.querySelector(
+        ".torra-menu-toggle"
+    );
 
-    const mobileMenu =
-        document.querySelector(".torra-mobile-menu");
+    const mobileMenu = document.querySelector(
+        ".torra-mobile-menu"
+    );
 
-    const mobileLinks =
-        document.querySelectorAll(
-            ".torra-mobile-links a"
+
+    console.log("TORRA MENU BUTTON:", menuButton);
+    console.log("TORRA MOBILE MENU:", mobileMenu);
+
+
+    /* Check if elements exist */
+
+    if (!menuButton) {
+
+        console.error(
+            "TORRA ERROR: .torra-menu-toggle not found"
         );
 
-
-    /* Make sure elements exist */
-
-    if (menuToggle && mobileMenu) {
-
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen =
-                mobileMenu.classList.toggle("active");
-
-            menuToggle.classList.toggle(
-                "active",
-                isOpen
-            );
+        return;
+    }
 
 
-            /* Accessibility */
+    if (!mobileMenu) {
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+        console.error(
+            "TORRA ERROR: .torra-mobile-menu not found"
+        );
 
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                isOpen ? "false" : "true"
-            );
-
-
-            /* Prevent background scrolling */
-
-            document.body.style.overflow =
-                isOpen ? "hidden" : "";
-
-        });
-
-
-        /* Close menu when navigation link is clicked */
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mobileMenu.classList.remove("active");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                mobileMenu.setAttribute(
-                    "aria-hidden",
-                    "true"
-                );
-
-                document.body.style.overflow = "";
-
-            });
-
-        });
-
+        return;
     }
 
 
     /* =====================================================
-       NAVBAR SCROLL EFFECT
+       OPEN / CLOSE MENU
     ===================================================== */
 
-    const navbar =
-        document.querySelector(".torra-navbar");
+    menuButton.addEventListener("click", function () {
+
+        console.log("TORRA MENU CLICKED");
+
+        const menuIsOpen =
+            mobileMenu.classList.contains("active");
+
+
+        if (menuIsOpen) {
+
+            /* CLOSE */
+
+            mobileMenu.classList.remove("active");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow = "";
+
+
+        } else {
+
+            /* OPEN */
+
+            mobileMenu.classList.add("active");
+
+            menuButton.classList.add("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+    });
+
+
+    /* =====================================================
+       MOBILE MENU LINKS
+    ===================================================== */
+
+    const mobileLinks = document.querySelectorAll(
+        ".torra-mobile-links a"
+    );
+
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("active");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow = "";
+
+        });
+
+    });
+
+
+    /* =====================================================
+       NAVBAR SCROLL
+    ===================================================== */
+
+    const navbar = document.querySelector(
+        ".torra-navbar"
+    );
 
 
     if (navbar) {
 
-        const updateNavbar = () => {
+        function updateNavbar() {
 
             if (window.scrollY > 40) {
 
@@ -109,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-        };
+        }
 
 
         window.addEventListener(
