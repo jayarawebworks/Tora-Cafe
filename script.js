@@ -1,86 +1,225 @@
 /* =========================================================
-   TORRA CAFÉ — MOBILE MENU FINAL
+   TORRA CAFÉ — MOBILE MENU
+   Jayara Web Works
 ========================================================= */
 
 (function () {
 
     function initTorraMenu() {
 
-        const button = document.getElementById("torraMenuToggle");
-        const menu = document.getElementById("torraMobileMenu");
+        /* =================================================
+           ELEMENTS
+        ================================================= */
 
-        console.log("TORRA BUTTON:", button);
-        console.log("TORRA MENU:", menu);
+        const openButton =
+            document.getElementById("torraMenuToggle");
 
-        if (!button || !menu) {
-            console.error("TORRA MOBILE MENU ELEMENTS NOT FOUND");
+        const closeButton =
+            document.getElementById("torraMobileClose");
+
+        const menu =
+            document.getElementById("torraMobileMenu");
+
+
+        /* =================================================
+           DEBUG
+        ================================================= */
+
+        console.log(
+            "TORRA OPEN BUTTON:",
+            openButton
+        );
+
+        console.log(
+            "TORRA CLOSE BUTTON:",
+            closeButton
+        );
+
+        console.log(
+            "TORRA MOBILE MENU:",
+            menu
+        );
+
+
+        /* =================================================
+           CHECK ELEMENTS
+        ================================================= */
+
+        if (!openButton || !menu) {
+
+            console.error(
+                "TORRA MOBILE MENU ELEMENTS NOT FOUND"
+            );
+
             return;
         }
 
-        button.onclick = function () {
 
-            console.log("TORRA HAMBURGER CLICKED");
+        /* =================================================
+           OPEN MENU
+        ================================================= */
 
-            const isOpen = menu.classList.contains("active");
+        function openMenu() {
 
-            if (isOpen) {
+            menu.classList.add("active");
 
-                menu.classList.remove("active");
+            openButton.classList.add("active");
 
-                button.classList.remove("active");
+            openButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
-                button.setAttribute(
-                    "aria-expanded",
-                    "false"
+            menu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow = "hidden";
+
+            console.log(
+                "TORRA MENU OPENED"
+            );
+
+        }
+
+
+        /* =================================================
+           CLOSE MENU
+        ================================================= */
+
+        function closeMenu() {
+
+            menu.classList.remove("active");
+
+            openButton.classList.remove("active");
+
+            openButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow = "";
+
+            console.log(
+                "TORRA MENU CLOSED"
+            );
+
+        }
+
+
+        /* =================================================
+           HAMBURGER BUTTON
+        ================================================= */
+
+        openButton.addEventListener(
+            "click",
+            function () {
+
+                console.log(
+                    "TORRA HAMBURGER CLICKED"
                 );
 
-                document.body.style.overflow = "";
+                if (
+                    menu.classList.contains("active")
+                ) {
 
-            } else {
+                    closeMenu();
 
-                menu.classList.add("active");
+                } else {
 
-                button.classList.add("active");
+                    openMenu();
 
-                button.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
-
-                document.body.style.overflow = "hidden";
+                }
 
             }
+        );
 
-        };
+
+        /* =================================================
+           CLOSE BUTTON ×
+        ================================================= */
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
+                "click",
+                function () {
+
+                    console.log(
+                        "TORRA CLOSE BUTTON CLICKED"
+                    );
+
+                    closeMenu();
+
+                }
+            );
+
+        }
 
 
-        /* CLOSE WHEN LINK IS CLICKED */
+        /* =================================================
+           MOBILE NAVIGATION LINKS
+        ================================================= */
 
-        const links = menu.querySelectorAll("a");
+        const links =
+            menu.querySelectorAll(
+                ".torra-mobile-links a"
+            );
 
-        links.forEach(function (link) {
 
-            link.onclick = function () {
+        links.forEach(
+            function (link) {
 
-                menu.classList.remove("active");
+                link.addEventListener(
+                    "click",
+                    function () {
 
-                button.classList.remove("active");
+                        closeMenu();
 
-                button.setAttribute(
-                    "aria-expanded",
-                    "false"
+                    }
                 );
 
-                document.body.style.overflow = "";
+            }
+        );
 
-            };
 
-        });
+        /* =================================================
+           ESC KEY
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    menu.classList.contains("active")
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
 
     }
 
 
-    if (document.readyState === "loading") {
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    if (
+        document.readyState === "loading"
+    ) {
 
         document.addEventListener(
             "DOMContentLoaded",
