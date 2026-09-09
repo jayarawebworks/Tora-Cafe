@@ -1,1 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <!-- =========================================
+         BASIC DOCUMENT SETUP
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TORRA Café — Good Taste. Good Mood. Good Place. A premium café experience in Ravet, Pune."
+    >
+
+    <meta
+        name="theme-color"
+        content="#12110f"
+    >
+
+    <title>
+        TORRA Café — Ravet
+    </title>
+
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link
+        rel="icon"
+        href="torra-brand.jpg"
+        type="image/jpeg"
+    >
+
+
+    <!-- =========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS FILES
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="footer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         GRAIN / VISUAL OVERLAY
+    ========================================== -->
+
+    <div
+        class="grain-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         CUSTOM CURSOR
+         Desktop only
+    ========================================== -->
+
+    <div
+        class="custom-cursor"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="custom-cursor-dot"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         WEBSITE
+    ========================================== -->
+
+    <div class="site-wrapper">
+
+
+        <!-- =====================================
+             NAVBAR
+        ====================================== -->
+
+        <header
+            class="torra-navbar"
+            id="navbar"
+        >
+
+            <!-- LOGO -->
+
+            <a
+                href="#home"
+                class="torra-brand"
+                aria-label="TORRA Café Home"
+            >
+
+                <span class="torra-brand-main">
+                    TORRA<span class="brand-symbol">°</span>
+                </span>
+
+                <span class="torra-brand-sub">
+                    CAFÉ · RAVET
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="torra-nav-links"
+                aria-label="Main navigation"
+            >
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#story">
+                    Story
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#reviews">
+                    Reviews
+                </a>
+
+                <a href="#visit">
+                    Visit
+                </a>
+
+            </nav>
+
+
+            <!-- RESERVATION -->
+
+            <a
+                href="https://www.google.com/maps/reserve/v/dine/c/VAjZbsSUyZA"
+                class="torra-reserve"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span>
+                    Reserve a Table
+                </span>
+
+                <span class="torra-reserve-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="torra-menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </header>
+
+
+        <!-- =====================================
+             MOBILE MENU
+        ====================================== -->
+
+        <div
+            class="torra-mobile-menu"
+            id="mobile-menu"
+            aria-hidden="true"
+        >
+
+            <div class="mobile-menu-inner">
+
+
+                <div class="mobile-menu-top">
+
+                    <span>
+                        TORRA CAFÉ
+                    </span>
+
+                    <span>
+                        RAVET · PUNE
+                    </span>
+
+                </div>
+
+
+                <nav
+                    class="torra-mobile-links"
+                    aria-label="Mobile navigation"
+                >
+
+                    <a href="#home">
+                        <span>01</span>
+                        Home
+                    </a>
+
+                    <a href="#story">
+                        <span>02</span>
+                        Story
+                    </a>
+
+                    <a href="#menu">
+                        <span>03</span>
+                        Menu
+                    </a>
+
+                    <a href="#experience">
+                        <span>04</span>
+                        Experience
+                    </a>
+
+                    <a href="#reviews">
+                        <span>05</span>
+                        Reviews
+                    </a>
+
+                    <a href="#visit">
+                        <span>06</span>
+                        Visit
+                    </a>
+
+                </nav>
+
+
+                <div class="mobile-menu-bottom">
+
+                    <div>
+
+                        <span>
+                            GOOD TASTE
+                        </span>
+
+                        <span>
+                            GOOD MOOD
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://www.google.com/maps/reserve/v/dine/c/VAjZbsSUyZA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Reserve a Table ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main id="main-content">
+
+
+            <!-- =================================
+                 01 — HERO
+            ================================== -->
+
+            <section
+                class="hero-section"
+                id="home"
+            >
+
+                <!-- Hero content will come here -->
+
+            </section>
+
+
+            <!-- =================================
+                 02 — BRAND / STORY
+            ================================== -->
+
+            <section
+                class="story-section"
+                id="story"
+            >
+
+                <!-- Story section -->
+
+            </section>
+
+
+            <!-- =================================
+                 03 — MENU
+            ================================== -->
+
+            <section
+                class="menu-section"
+                id="menu"
+            >
+
+                <!-- Menu section -->
+
+            </section>
+
+
+            <!-- =================================
+                 04 — EXPERIENCE
+            ================================== -->
+
+            <section
+                class="experience-section"
+                id="experience"
+            >
+
+                <!-- Experience section -->
+
+            </section>
+
+
+            <!-- =================================
+                 05 — REVIEWS
+            ================================== -->
+
+            <section
+                class="reviews-section"
+                id="reviews"
+            >
+
+                <!-- Reviews section -->
+
+            </section>
+
+
+            <!-- =================================
+                 06 — VISIT TORRA
+            ================================== -->
+
+            <section
+                class="visit-section"
+                id="visit"
+            >
+
+                <!-- Location / Contact section -->
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer
+            class="torra-footer"
+            id="footer"
+        >
+
+            <!-- Footer will come here -->
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="script.js"
+        defer
+    ></script>
+
+
+</body>
+
+</html>
