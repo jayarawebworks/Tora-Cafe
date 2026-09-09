@@ -1,179 +1,96 @@
 /* =========================================================
-   TORRA CAFÉ
-   MAIN JAVASCRIPT
-   Jayara Web Works
+   TORRA CAFÉ — MOBILE MENU FINAL
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
+    function initTorraMenu() {
 
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+        const button = document.getElementById("torraMenuToggle");
+        const menu = document.getElementById("torraMobileMenu");
 
-    const menuButton = document.querySelector(
-        ".torra-menu-toggle"
-    );
+        console.log("TORRA BUTTON:", button);
+        console.log("TORRA MENU:", menu);
 
-    const mobileMenu = document.querySelector(
-        ".torra-mobile-menu"
-    );
-
-
-    console.log("TORRA MENU BUTTON:", menuButton);
-    console.log("TORRA MOBILE MENU:", mobileMenu);
-
-
-    /* Check if elements exist */
-
-    if (!menuButton) {
-
-        console.error(
-            "TORRA ERROR: .torra-menu-toggle not found"
-        );
-
-        return;
-    }
-
-
-    if (!mobileMenu) {
-
-        console.error(
-            "TORRA ERROR: .torra-mobile-menu not found"
-        );
-
-        return;
-    }
-
-
-    /* =====================================================
-       OPEN / CLOSE MENU
-    ===================================================== */
-
-    menuButton.addEventListener("click", function () {
-
-        console.log("TORRA MENU CLICKED");
-
-        const menuIsOpen =
-            mobileMenu.classList.contains("active");
-
-
-        if (menuIsOpen) {
-
-            /* CLOSE */
-
-            mobileMenu.classList.remove("active");
-
-            menuButton.classList.remove("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-            document.body.style.overflow = "";
-
-
-        } else {
-
-            /* OPEN */
-
-            mobileMenu.classList.add("active");
-
-            menuButton.classList.add("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-            document.body.style.overflow = "hidden";
-
+        if (!button || !menu) {
+            console.error("TORRA MOBILE MENU ELEMENTS NOT FOUND");
+            return;
         }
 
-    });
+        button.onclick = function () {
 
+            console.log("TORRA HAMBURGER CLICKED");
 
-    /* =====================================================
-       MOBILE MENU LINKS
-    ===================================================== */
+            const isOpen = menu.classList.contains("active");
 
-    const mobileLinks = document.querySelectorAll(
-        ".torra-mobile-links a"
-    );
+            if (isOpen) {
 
+                menu.classList.remove("active");
 
-    mobileLinks.forEach(function (link) {
+                button.classList.remove("active");
 
-        link.addEventListener("click", function () {
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-            mobileMenu.classList.remove("active");
-
-            menuButton.classList.remove("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-            document.body.style.overflow = "";
-
-        });
-
-    });
-
-
-    /* =====================================================
-       NAVBAR SCROLL
-    ===================================================== */
-
-    const navbar = document.querySelector(
-        ".torra-navbar"
-    );
-
-
-    if (navbar) {
-
-        function updateNavbar() {
-
-            if (window.scrollY > 40) {
-
-                navbar.classList.add("scrolled");
+                document.body.style.overflow = "";
 
             } else {
 
-                navbar.classList.remove("scrolled");
+                menu.classList.add("active");
+
+                button.classList.add("active");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                document.body.style.overflow = "hidden";
 
             }
 
-        }
+        };
 
 
-        window.addEventListener(
-            "scroll",
-            updateNavbar,
-            { passive: true }
-        );
+        /* CLOSE WHEN LINK IS CLICKED */
 
+        const links = menu.querySelectorAll("a");
 
-        updateNavbar();
+        links.forEach(function (link) {
+
+            link.onclick = function () {
+
+                menu.classList.remove("active");
+
+                button.classList.remove("active");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                document.body.style.overflow = "";
+
+            };
+
+        });
 
     }
 
 
-});
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initTorraMenu
+        );
+
+    } else {
+
+        initTorraMenu();
+
+    }
+
+})();
