@@ -1122,3 +1122,501 @@
     }
 
 }
+/* =========================================================
+   02 — TORRA STORY
+========================================================= */
+
+.torra-story {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        130px 5vw
+        80px;
+
+    background:
+        #eee9df;
+
+    color:
+        #17120f;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.story-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 35px;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.18);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.5);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.story-main {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    gap: 10vw;
+
+    padding-top: 110px;
+
+}
+
+
+/* =========================================================
+   LEFT INTRO
+========================================================= */
+
+.story-intro {
+
+    position: relative;
+
+}
+
+
+.story-eyebrow {
+
+    margin: 0 0 30px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        #8d6749;
+
+}
+
+
+/* =========================================================
+   STORY TITLE
+========================================================= */
+
+.story-title {
+
+    margin: 0;
+
+    max-width: 720px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            65px,
+            8vw,
+            125px
+        );
+
+    font-weight: 500;
+
+    line-height: .88;
+
+    letter-spacing: -.055em;
+
+}
+
+
+.story-title em {
+
+    display: block;
+
+    margin-left: 5vw;
+
+    font-weight: 500;
+
+    color:
+        #8d6749;
+
+}
+
+
+/* =========================================================
+   RIGHT COPY
+========================================================= */
+
+.story-copy {
+
+    max-width: 420px;
+
+    padding-top: 85px;
+
+}
+
+
+/* LEAD */
+
+.story-lead {
+
+    margin: 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(
+            17px,
+            1.5vw,
+            23px
+        );
+
+    line-height:
+        1.55;
+
+    letter-spacing:
+        -.025em;
+
+    color:
+        #211914;
+
+}
+
+
+/* SECOND PARAGRAPH */
+
+.story-text {
+
+    max-width: 350px;
+
+    margin:
+        35px 0 40px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(33,25,20,.62);
+
+}
+
+
+/* =========================================================
+   STORY LINK
+========================================================= */
+
+.story-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.4);
+
+    color:
+        #17120f;
+
+    text-decoration: none;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    transition:
+        gap .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.story-link:hover {
+
+    gap: 28px;
+
+    color:
+        #8d6749;
+
+    border-color:
+        #8d6749;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.story-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 150px;
+
+}
+
+
+.story-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        rgba(23,18,15,.18);
+
+}
+
+
+.story-bottom p,
+.story-year {
+
+    margin: 0;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.45);
+
+}
+
+
+.story-year {
+
+    color:
+        rgba(23,18,15,.7);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .torra-story {
+
+        min-height: auto;
+
+        padding:
+            100px 6vw
+            65px;
+
+    }
+
+
+    .story-main {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+        padding-top: 75px;
+
+    }
+
+
+    .story-title {
+
+        font-size:
+            clamp(
+                58px,
+                15vw,
+                90px
+            );
+
+    }
+
+
+    .story-title em {
+
+        margin-left: 10vw;
+
+    }
+
+
+    .story-copy {
+
+        padding-top: 35px;
+
+        max-width: 500px;
+
+    }
+
+
+    .story-lead {
+
+        font-size: 17px;
+
+    }
+
+
+    .story-bottom {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+
+        margin-top: 90px;
+
+    }
+
+
+    .story-bottom p {
+
+        order: 2;
+
+    }
+
+
+    .story-year {
+
+        order: 3;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .torra-story {
+
+        padding:
+            85px 6vw
+            55px;
+
+    }
+
+
+    .story-top {
+
+        font-size: 7px;
+
+    }
+
+
+    .story-main {
+
+        padding-top: 65px;
+
+    }
+
+
+    .story-eyebrow {
+
+        font-size: 7px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .story-title {
+
+        font-size: 58px;
+
+    }
+
+
+    .story-copy {
+
+        padding-top: 30px;
+
+    }
+
+
+    .story-lead {
+
+        font-size: 16px;
+
+    }
+
+
+    .story-text {
+
+        font-size: 11px;
+
+        line-height: 1.8;
+
+    }
+
+}
