@@ -1,97 +1,127 @@
-
 /* =========================================================
-   TORRA NAVBAR
+   TORRA CAFÉ — MAIN JAVASCRIPT
+   Designed by Jayara Web Works
 ========================================================= */
 
-const torraNavbar = document.querySelector(".torra-navbar");
-
-const torraMenuToggle =
-    document.querySelector(".torra-menu-toggle");
-
-const torraMobileMenu =
-    document.querySelector(".torra-mobile-menu");
-
-const torraMobileLinks =
-    document.querySelectorAll(".torra-mobile-links a");
+document.addEventListener("DOMContentLoaded", () => {
 
 
-/* ===============================
-   NAVBAR SCROLL EFFECT
-================================ */
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
 
-function updateTorraNavbar() {
+    const menuToggle =
+        document.querySelector(".torra-menu-toggle");
 
-    if (window.scrollY > 40) {
+    const mobileMenu =
+        document.querySelector(".torra-mobile-menu");
 
-        torraNavbar.classList.add("scrolled");
+    const mobileLinks =
+        document.querySelectorAll(
+            ".torra-mobile-links a"
+        );
 
-    } else {
 
-        torraNavbar.classList.remove("scrolled");
+    /* Make sure elements exist */
+
+    if (menuToggle && mobileMenu) {
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                mobileMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+
+            /* Accessibility */
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                isOpen ? "false" : "true"
+            );
+
+
+            /* Prevent background scrolling */
+
+            document.body.style.overflow =
+                isOpen ? "hidden" : "";
+
+        });
+
+
+        /* Close menu when navigation link is clicked */
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.style.overflow = "";
+
+            });
+
+        });
 
     }
 
-}
 
-window.addEventListener(
-    "scroll",
-    updateTorraNavbar,
-    { passive: true }
-);
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ===================================================== */
 
-updateTorraNavbar();
+    const navbar =
+        document.querySelector(".torra-navbar");
 
 
-/* ===============================
-   MOBILE MENU
-================================ */
+    if (navbar) {
 
-function toggleTorraMenu() {
+        const updateNavbar = () => {
 
-    const isOpen =
-        torraMobileMenu.classList.toggle("active");
+            if (window.scrollY > 40) {
 
-    torraMenuToggle.classList.toggle(
-        "active",
-        isOpen
-    );
+                navbar.classList.add("scrolled");
 
-    torraMenuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
+            } else {
 
-    document.body.style.overflow =
-        isOpen ? "hidden" : "";
+                navbar.classList.remove("scrolled");
 
-}
+            }
+
+        };
 
 
-torraMenuToggle.addEventListener(
-    "click",
-    toggleTorraMenu
-);
-
-
-/* ===============================
-   CLOSE MOBILE MENU
-================================ */
-
-torraMobileLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        torraMobileMenu.classList.remove("active");
-
-        torraMenuToggle.classList.remove("active");
-
-        torraMenuToggle.setAttribute(
-            "aria-expanded",
-            "false"
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
         );
 
-        document.body.style.overflow = "";
 
-    });
+        updateNavbar();
+
+    }
+
 
 });
