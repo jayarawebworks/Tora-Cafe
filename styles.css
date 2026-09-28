@@ -2193,3 +2193,737 @@
     }
 
 }
+
+/* =========================================================
+   04 — TORRA EXPERIENCE
+========================================================= */
+
+.torra-experience {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        130px 5vw
+        80px;
+
+    background:
+        #eee9df;
+
+    color:
+        #17120f;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.experience-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 30px;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.16);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.45);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.experience-main {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        .9fr;
+
+    align-items: center;
+
+    gap: 9vw;
+
+    min-height:
+        690px;
+
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.experience-visual {
+
+    position: relative;
+
+    width: min(42vw, 560px);
+
+    height: min(42vw, 560px);
+
+    margin-left: 3vw;
+
+}
+
+
+/* =========================================================
+   MAIN CIRCLE
+========================================================= */
+
+.experience-circle {
+
+    position: absolute;
+
+    inset: 18%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #b99a7c,
+            #765137 45%,
+            #332218 100%
+        );
+
+    box-shadow:
+        0 40px 100px
+        rgba(46,31,20,.20);
+
+    animation:
+        experiencePulse
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes experiencePulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.035);
+
+    }
+
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.experience-orbit {
+
+    position: absolute;
+
+    inset: 8%;
+
+    border:
+        1px solid
+        rgba(23,18,15,.25);
+
+    border-radius: 50%;
+
+}
+
+
+.orbit-one {
+
+    transform:
+        rotate(25deg)
+        scaleX(.72);
+
+}
+
+
+.orbit-two {
+
+    transform:
+        rotate(-25deg)
+        scaleX(.72);
+
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.experience-center {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color:
+        #eee9df;
+
+    z-index: 2;
+
+}
+
+
+.experience-number {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    opacity: .6;
+
+}
+
+
+.experience-center-text {
+
+    margin-top: 10px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            90px
+        );
+
+    font-style: italic;
+
+    letter-spacing:
+        -.05em;
+
+}
+
+
+/* =========================================================
+   FLOATING LABELS
+========================================================= */
+
+.experience-floating {
+
+    position: absolute;
+
+    z-index: 4;
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        rgba(23,18,15,.25);
+
+    background:
+        rgba(238,233,223,.75);
+
+    backdrop-filter:
+        blur(8px);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+}
+
+
+.floating-one {
+
+    top: 14%;
+
+    left: 8%;
+
+    animation:
+        floatingLabel 5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.floating-two {
+
+    right: 5%;
+
+    top: 48%;
+
+    animation:
+        floatingLabel 5s
+        1s
+        ease-in-out
+        infinite;
+
+}
+
+
+.floating-three {
+
+    bottom: 10%;
+
+    left: 25%;
+
+    animation:
+        floatingLabel 5s
+        2s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes floatingLabel {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.experience-content {
+
+    max-width:
+        500px;
+
+}
+
+
+.experience-eyebrow {
+
+    margin:
+        0 0 25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        #8d6749;
+
+}
+
+
+.experience-title {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            65px,
+            7vw,
+            105px
+        );
+
+    font-weight: 500;
+
+    line-height: .88;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.experience-title em {
+
+    display: block;
+
+    margin-left: 5vw;
+
+    color:
+        #8d6749;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.experience-description {
+
+    max-width:
+        390px;
+
+    margin:
+        40px 0 55px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.85;
+
+    color:
+        rgba(23,18,15,.62);
+
+}
+
+
+/* =========================================================
+   EXPERIENCE POINTS
+========================================================= */
+
+.experience-points {
+
+    border-top:
+        1px solid
+        rgba(23,18,15,.16);
+
+}
+
+
+.experience-point {
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        1fr;
+
+    gap: 15px;
+
+    padding:
+        20px 0;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.12);
+
+}
+
+
+.experience-point > span {
+
+    padding-top: 3px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    color:
+        rgba(23,18,15,.4);
+
+}
+
+
+.experience-point h3 {
+
+    margin:
+        0 0 6px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.experience-point p {
+
+    margin: 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(23,18,15,.5);
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.experience-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid
+        rgba(23,18,15,.16);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.42);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .torra-experience {
+
+        min-height: auto;
+
+        padding:
+            100px 6vw
+            60px;
+
+    }
+
+
+    .experience-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        min-height: auto;
+
+        padding-top: 70px;
+
+    }
+
+
+    .experience-visual {
+
+        width: 80vw;
+
+        height: 80vw;
+
+        max-width: 520px;
+
+        max-height: 520px;
+
+        margin: 0 auto;
+
+        order: 2;
+
+    }
+
+
+    .experience-content {
+
+        order: 1;
+
+    }
+
+
+    .experience-title {
+
+        font-size:
+            clamp(
+                58px,
+                14vw,
+                90px
+            );
+
+    }
+
+
+    .experience-description {
+
+        margin:
+            30px 0 45px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .torra-experience {
+
+        padding:
+            85px 6vw
+            55px;
+
+    }
+
+
+    .experience-top {
+
+        font-size: 7px;
+
+    }
+
+
+    .experience-main {
+
+        padding-top: 60px;
+
+        gap: 45px;
+
+    }
+
+
+    .experience-title {
+
+        font-size: 58px;
+
+    }
+
+
+    .experience-eyebrow {
+
+        font-size: 7px;
+
+    }
+
+
+    .experience-description {
+
+        font-size: 11px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .experience-visual {
+
+        width: 88vw;
+
+        height: 88vw;
+
+    }
+
+
+    .experience-center-text {
+
+        font-size: 52px;
+
+    }
+
+
+    .experience-floating {
+
+        font-size: 6px;
+
+        padding: 7px 9px;
+
+    }
+
+
+    .experience-bottom {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}
