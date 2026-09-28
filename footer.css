@@ -1,1 +1,518 @@
+/* =========================================================
+   07 — TORRA FOOTER
+========================================================= */
 
+.torra-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        90px 5vw 30px;
+
+    background:
+        #110d0a;
+
+    color:
+        #eee9df;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        .7fr
+        .9fr;
+
+    gap: 8vw;
+
+    padding-bottom:
+        80px;
+
+    border-bottom:
+        1px solid
+        rgba(238,233,223,.14);
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-logo {
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            80px,
+            13vw,
+            190px
+        );
+
+    font-style:
+        italic;
+
+    font-weight:
+        500;
+
+    line-height:
+        .75;
+
+    letter-spacing:
+        -.07em;
+
+}
+
+
+.footer-brand p {
+
+    margin:
+        30px 0 0;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(238,233,223,.4);
+
+}
+
+
+/* =========================================================
+   NAVIGATION + CONTACT
+========================================================= */
+
+.footer-navigation,
+.footer-contact {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.footer-navigation > span,
+.footer-contact > span {
+
+    margin-bottom:
+        22px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #b99a7c;
+
+}
+
+
+.footer-navigation a {
+
+    width:
+        fit-content;
+
+    margin-bottom:
+        10px;
+
+    color:
+        rgba(238,233,223,.65);
+
+    text-decoration:
+        none;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+
+.footer-navigation a:hover {
+
+    color:
+        #eee9df;
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact p {
+
+    margin:
+        0 0 20px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(238,233,223,.58);
+
+}
+
+
+.footer-contact a {
+
+    width:
+        fit-content;
+
+    color:
+        #eee9df;
+
+    text-decoration:
+        none;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .1em;
+
+    border-bottom:
+        1px solid
+        rgba(238,233,223,.3);
+
+    padding-bottom:
+        6px;
+
+}
+
+
+/* =========================================================
+   RESERVE
+========================================================= */
+
+.footer-middle {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    padding:
+        65px 0;
+
+}
+
+
+.footer-reserve {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        45px;
+
+    padding:
+        18px 25px;
+
+    border:
+        1px solid
+        rgba(238,233,223,.3);
+
+    color:
+        #eee9df;
+
+    text-decoration:
+        none;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .15em;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        gap .35s ease;
+
+}
+
+
+.footer-reserve:hover {
+
+    gap:
+        58px;
+
+    background:
+        #eee9df;
+
+    color:
+        #17120f;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    align-items:
+        center;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        rgba(238,233,223,.10);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(238,233,223,.32);
+
+}
+
+
+.footer-bottom span:nth-child(2) {
+
+    text-align:
+        center;
+
+}
+
+
+.footer-bottom a {
+
+    justify-self:
+        end;
+
+    color:
+        rgba(238,233,223,.5);
+
+    text-decoration:
+        none;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.footer-bottom a:hover {
+
+    color:
+        #b99a7c;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .torra-footer {
+
+        padding:
+            75px 6vw 25px;
+
+    }
+
+
+    .footer-top {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            55px;
+
+        padding-bottom:
+            60px;
+
+    }
+
+
+    .footer-logo {
+
+        font-size:
+            95px;
+
+    }
+
+
+    .footer-navigation,
+    .footer-contact {
+
+        max-width:
+            300px;
+
+    }
+
+
+    .footer-middle {
+
+        padding:
+            50px 0;
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .footer-bottom {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+
+    }
+
+
+    .footer-bottom span:nth-child(2) {
+
+        text-align:
+            left;
+
+    }
+
+
+    .footer-bottom a {
+
+        justify-self:
+            start;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .torra-footer {
+
+        padding:
+            65px 6vw 25px;
+
+    }
+
+
+    .footer-logo {
+
+        font-size:
+            78px;
+
+    }
+
+
+    .footer-brand p {
+
+        font-size:
+            6px;
+
+    }
+
+
+    .footer-reserve {
+
+        width:
+            100%;
+
+        justify-content:
+            space-between;
+
+    }
+
+}
