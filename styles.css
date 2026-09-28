@@ -3577,3 +3577,620 @@
     }
 
 }
+/* =========================================================
+   06 — VISIT TORRA
+========================================================= */
+
+.torra-visit {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        130px 5vw
+        45px;
+
+    background:
+        #eee9df;
+
+    color:
+        #17120f;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.visit-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.16);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.45);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.visit-main {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        .9fr;
+
+    gap: 10vw;
+
+    align-items: center;
+
+    padding:
+        90px 0
+        110px;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.visit-eyebrow {
+
+    margin:
+        0 0 28px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color:
+        #8d6749;
+
+}
+
+
+.visit-title {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            75px,
+            9vw,
+            140px
+        );
+
+    font-weight: 500;
+
+    line-height: .82;
+
+    letter-spacing:
+        -.065em;
+
+}
+
+
+.visit-title em {
+
+    display: block;
+
+    margin-left: 7vw;
+
+    color:
+        #8d6749;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.visit-details {
+
+    max-width:
+        450px;
+
+}
+
+
+.visit-detail {
+
+    padding:
+        22px 0;
+
+    border-top:
+        1px solid
+        rgba(23,18,15,.15);
+
+}
+
+
+.visit-detail:last-of-type {
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.15);
+
+}
+
+
+.visit-detail > span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.42);
+
+}
+
+
+.visit-detail p {
+
+    margin: 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(23,18,15,.75);
+
+}
+
+
+.visit-detail a {
+
+    color:
+        #17120f;
+
+    text-decoration:
+        none;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.visit-detail a:hover {
+
+    color:
+        #8d6749;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.visit-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    margin-top: 35px;
+
+}
+
+
+.visit-reserve {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    min-width: 210px;
+
+    padding:
+        17px 20px;
+
+    background:
+        #17120f;
+
+    color:
+        #eee9df;
+
+    text-decoration: none;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    transition:
+        background .35s ease,
+        transform .35s ease;
+
+}
+
+
+.visit-reserve:hover {
+
+    background:
+        #8d6749;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.visit-map {
+
+    color:
+        #17120f;
+
+    text-decoration: none;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    border-bottom:
+        1px solid
+        rgba(23,18,15,.4);
+
+    padding-bottom: 7px;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.visit-map:hover {
+
+    color:
+        #8d6749;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.visit-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: end;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid
+        rgba(23,18,15,.16);
+
+}
+
+
+.visit-brand {
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            55px
+        );
+
+    font-style:
+        italic;
+
+    letter-spacing:
+        -.04em;
+
+}
+
+
+.visit-tagline {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(23,18,15,.4);
+
+}
+
+
+.visit-arrow {
+
+    justify-self: end;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(23,18,15,.25);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+.visit-arrow:hover {
+
+    background:
+        #17120f;
+
+    color:
+        #eee9df;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .torra-visit {
+
+        min-height:
+            auto;
+
+        padding:
+            100px 6vw
+            50px;
+
+    }
+
+
+    .visit-main {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 65px;
+
+        padding:
+            75px 0
+            80px;
+
+    }
+
+
+    .visit-title {
+
+        font-size:
+            clamp(
+                60px,
+                15vw,
+                95px
+            );
+
+    }
+
+
+    .visit-details {
+
+        max-width:
+            520px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .torra-visit {
+
+        padding:
+            85px 6vw
+            45px;
+
+    }
+
+
+    .visit-top {
+
+        font-size: 7px;
+
+    }
+
+
+    .visit-main {
+
+        padding:
+            65px 0
+            60px;
+
+    }
+
+
+    .visit-eyebrow {
+
+        font-size: 7px;
+
+    }
+
+
+    .visit-title {
+
+        font-size:
+            58px;
+
+    }
+
+
+    .visit-detail {
+
+        padding:
+            18px 0;
+
+    }
+
+
+    .visit-detail p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .visit-actions {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap: 22px;
+
+    }
+
+
+    .visit-reserve {
+
+        width:
+            100%;
+
+    }
+
+
+    .visit-bottom {
+
+        grid-template-columns:
+            1fr
+            auto;
+
+        gap: 20px;
+
+    }
+
+
+    .visit-tagline {
+
+        grid-column:
+            1 / -1;
+
+        grid-row:
+            2;
+
+    }
+
+}
